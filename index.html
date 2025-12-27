@@ -6,10 +6,10 @@
     <title>Portfolio | Développeur Web</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
-<!-- Header corrigé -->
 <header>
     <div class="container">
         <nav class="navbar">
@@ -23,8 +23,9 @@
             </ul>
             <div class="nav-right">
                 <!-- Bouton thème -->
-                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
-                    <i class="fas fa-moon"></i>
+                <button id="themeToggle" class="theme-toggle" aria-label="Changer le thème">
+    <i class="fas fa-moon"></i>
+</button>
                 </button>
                 <!-- Menu hamburger -->
                 <div class="hamburger">
@@ -45,8 +46,8 @@
                 <a href="#Projects" class="btn">View my projects</a>
                 <a href="#contact" class="btn">Contact me</a>
                 <!-- Bouton CV -->
-                <a href="#" class="btn btn-cv" id="cvBtn">
-                    <i class="fas fa-download"></i> Mon CV
+                <a href="CV Professionnel Minimaliste Marketing Noir Blanc et Marron (2) (1).pdf" class="btn btn-cv" id="cvBtn">
+                    <i class="fas fa-download"></i> My CV
                 </a>
             </div>
         </div>
@@ -146,7 +147,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-category="web">
-                <a href="https://www.youtube.com" class="portfolio-link" target="_blank" rel="noopener noreferrer">
+                <a href="https://serviceloca.netlify.app/" class="portfolio-link" target="_blank" rel="noopener noreferrer">
                     <div class="portfolio-img">
                         <img src="cars de loca.gif" alt="Projet 1">
                     </div>
@@ -201,21 +202,21 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Votre nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Sujet" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Votre message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send the message</button>
-                    </form>
+                    <form id="contactForm" action="https://formspree.io/f/xvzoazwb" method="POST">
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" class="form-control" placeholder="Votre email" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="subject" class="form-control" placeholder="Sujet" required>
+    </div>
+    <div class="form-group">
+        <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
+    </div>
+    <button type="submit" class="btn">Envoyer le message</button>
+</form>
                 </div>
             </div>
         </div>
@@ -232,8 +233,8 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/anas_sed05?igsh=b2l1NzI3aWdwenN6"><i class="fab fa-instagram"></i></a>
-                        <a href="www.linkedin.com/in/anas-seddaoui-9921b9398"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/anas-seddaoui-9921b9398?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/anassed99-beep"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -261,5 +262,11 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // Initialiser EmailJS avec votre Public Key
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre clé
+    })();
+</script>
 </body>
 </html>
